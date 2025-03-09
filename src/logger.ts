@@ -6,10 +6,6 @@ import {
   TransformedData,
 } from 'winston-elasticsearch';
 
-const esTransformer = (logData: LogData): TransformedData => {
-  return ElasticsearchTransformer(logData);
-};
-
 export const winstonLogger = (
   elasticsearchNode: string,
   name: string,
@@ -24,7 +20,9 @@ export const winstonLogger = (
     },
     elasticsearch: {
       level,
-      transformer: esTransformer,
+      transformer: (logData: LogData) => {
+        return ElasticsearchTransformer(logData);
+      },
       clientOpts: {
         node: elasticsearchNode,
         log: level,
