@@ -4,7 +4,7 @@
   "main": "index.js",
   "description": "Helpers library for microservice app",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "npm run build:cjs && npm run build:esm && tsc --outDir build/src && node scripts/build-package.js",
@@ -22,7 +22,7 @@
   "author": "anupam bera",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/iamanupambera/microservice-shared-library.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
